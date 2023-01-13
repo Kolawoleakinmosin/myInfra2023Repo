@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
-            }
+checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'c8658293-c53d-4fc4-aad0-799ff23509ae', url: 'https://github.com/Kolawoleakinmosin/myInfra2023Repo']])            }
         }
     
         stage ("terraform init") {
